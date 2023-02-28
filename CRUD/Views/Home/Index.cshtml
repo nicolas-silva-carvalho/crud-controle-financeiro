@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/css/Index/Button.css" rel="stylesheet" asp-append-version="true"/>
+<link href="~/css/Index/Index.css" rel="stylesheet" asp-append-version="true"/>
+
+<main>
+    <div>
+        <button><a asp-action="Login" asp-controller="Login">Login</a></button>
+        <button><a asp-action="CriarConta" asp-controller="Login">Sing Up</a></button>
+    </div>
+    <div><h1 data-text="CRUD"><span data-text="CRUD">CRUD</span></h1></div>
+</main>

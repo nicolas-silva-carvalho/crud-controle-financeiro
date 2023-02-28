@@ -1,0 +1,21 @@
+﻿@model ControleFinanceiro
+@{
+    Layout = null;
+}
+
+
+<form asp-controller="Logado" asp-action="Adicionar" method="post">
+    <label>Produto</label>
+    <input type="text" asp-for="Produto" class="form-control" placeholder="Digite o produto">
+
+    <label>Quantas parcelas</label>
+    <input type="text" asp-for="QtdParcelas" class="form-control" placeholder="Digite a quantidade de parcelas">
+
+    <label>Preco total</label>
+    <input type="number" asp-for="Precototal" class="form-control" placeholder="Digite o preço total">
+
+    <label>Descricao</label>
+    <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite o nome do usuário">
+
+    <button type="submit">Enviar compra</button>
+</form>

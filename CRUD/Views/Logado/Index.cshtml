@@ -1,0 +1,70 @@
+﻿@model List<ControleFinanceiro>
+
+@{
+    Layout = null;
+    ViewData["Title"] = "Home de usuário";
+}
+
+<link href="~/css/Logado/IndexLogado.css" rel="stylesheet" asp-append-version="true" />
+<link href="~/teste/style.css" rel="stylesheet" asp-append-version="true"/>
+
+    <header class="cabecalho">
+        
+    </header>
+    <nav class="menu-lateral">
+        <img src="~/Imagens/Contract-PNG-File.png" alt="Logotipo da HZC" class="menu-lateral__logo">
+        <a class="menu-lateral__link menu-lateral__link--videos" asp-action="Adicionar" asp-controller="Logado">Adicionar</a></>
+        <a class="menu-lateral__link menu-lateral__link--videos" asp-action="Grafico" asp-controller="Logado">Relatório</a>
+        <a class="menu-lateral__link menu-lateral__link--picos" asp-action="GraficoChart" asp-controller="Logado">Gerar</a>
+        <a href="#" class="menu-lateral__link menu-lateral__link--integrantes">#</a>
+        <a href="#" class="menu-lateral__link menu-lateral__link--camisas">#</a>
+        <a class="menu-lateral__link menu-lateral__link--pinturas" asp-action="Sair" asp-controller="Logado">Sair</a>
+    </nav>
+<section class="principal">
+        <table>
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Produto</th>
+                <th scope="col">QtdParcelas</th>
+                <th scope="col">Precototal</th>
+                <th scope="col">PrecoPorParcela</th>
+                <th scope="col">Descricao</th>
+                <th scope="col">DataCompra</th>
+                <th scope="col">UltimoDiaParcela</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var controleFinanceiro in Model)
+                {
+                    <tr class="coluna">
+                        <td data-title='Provider Name' scope="row">@controleFinanceiro.Id</td>
+                        <td data-title='E-mail'>@controleFinanceiro.Produto</td>
+                        <td>@controleFinanceiro.QtdParcelas</td>
+                        <td>@controleFinanceiro.Precototal</td>
+                        <td>@controleFinanceiro.PrecoPorParcela</td>
+                        <td>@controleFinanceiro.Descricao</td>
+                        <td>@controleFinanceiro.DataCompra</td>
+                        <td>@controleFinanceiro.UltimoDiaParcela</td>
+                        <td class='select'>
+                            <div>
+                                <a class="button" role="button" href="#">Opções</a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+
+            }
+            else
+            {
+                <tr><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>
+            }
+            </tbody>
+        </table>
+   
+</section>
+
+    

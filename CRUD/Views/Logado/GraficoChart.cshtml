@@ -1,0 +1,151 @@
+﻿
+
+@*<input id="ID" value="Mostrar Gráfico" type="button" />
+<input id="IDs" value="Mostrar Gráfico" type="button" />*@
+<a asp-action="Index" asp-asp-controller="Logado" role="button">Voltar</a>
+
+<div id="ID">
+    <canvas id="myChart" style="max-width: 400px; max-height: 400px"></canvas>
+</div>
+
+<div id="IDs">
+    <canvas id="myCharts" style="max-width: 400px; max-height: 400px"></canvas>
+</div>
+
+<div id="IDss">
+    <canvas id="myChartss" style="max-width: 400px; max-height: 400px"></canvas>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script type="text/javascript">
+
+    $(function () {
+        $("#ID").show(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/Logado/GraficoCharts",
+                data: "",
+                contextType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSucessResult,
+                error: OnError
+            });
+
+            function OnSucessResult (data){
+                
+                var _data=data;
+                var _chartLabels=_data[0];
+                var _chartData=_data[1];
+
+                var barColor = ["red", "green", "yellow", "blue", "black", "black", "black", "black"];
+
+                new Chart("myChart",
+                {
+                    type:"bar",
+                    data: {
+                        labels: _chartLabels,
+                        datasets: [{
+                            backgroundColor: barColor,
+                            data: _chartData
+                        }]
+                    }
+                });
+
+            }
+
+            function OnError (err) {
+
+            }
+
+        });
+    }); 
+
+
+
+    $(function () {
+        $("#IDs").show(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/Logado/GraficoCharts",
+                data: "",
+                contextType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSucessResultt,
+                error: OnErrorr
+            });
+
+            function OnSucessResultt(data) {
+
+                var _data = data;
+                var _chartLabels = _data[0];
+                var _chartData = _data[1];
+
+                var barColor = ["rgb(255, 99, 132)", "green", "yellow", "blue", "rgb(54, 162, 235)", "black", "black", "black"];
+
+                new Chart("myCharts",
+                    {
+                        type: "polarArea",
+                        data: {
+                            labels: _chartLabels,
+                            datasets: [{
+                                backgroundColor: barColor,
+                                data: _chartData
+                            }]
+                        }
+                    });
+
+            }
+
+            function OnErrorr(err) {
+
+            }
+
+        });
+    });
+
+    $(function () {
+        $("#IDss").show(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "/Logado/GraficoCharts",
+                data: "",
+                contextType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: OnSucessResultt,
+                error: OnErrorr
+            });
+
+            function OnSucessResultt(data) {
+
+                var _data = data;
+                var _chartLabels = _data[0];
+                var _chartData = _data[1];
+
+                var barColor = ["rgb(255, 99, 132)", "green", "yellow", "blue", "rgb(54, 162, 235)", "black", "black", "black"];
+
+                new Chart("myChartss",
+                    {
+                        type: "line",
+                        data: {
+                            labels: _chartLabels,
+                            datasets: [{
+                                backgroundColor: barColor,
+                                data: _chartData
+                            }]
+                        }
+                    });
+
+            }
+
+            function OnErrorr(err) {
+
+            }
+
+        });
+    });
+</script>

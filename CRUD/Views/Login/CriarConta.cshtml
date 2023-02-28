@@ -1,0 +1,25 @@
+﻿@model Usuarios
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/LoginECriarConta/LoginECriarContacss.css" asp-append-version="true"/>
+
+<form class="container-singup" asp-controller="Login" asp-action="CriarConta" method="post">
+    <label class="label">Nome</label>
+    <input class="input" type="text" asp-for="Nome" class="form-control" placeholder="Digite o seu nome">
+    
+    <label class="label">E-mail</label>
+    <input class="input" type="text" asp-for="Email" class="form-control" placeholder="Digite o E-mail">
+
+    <label class="label">Username</label>
+    <input class="input" type="text" asp-for="Username" class="form-control" placeholder="Digite o nome do usuário">
+
+    <label class="label">Password</label>
+    <input class="input" type="text" asp-for="Password" class="form-control" placeholder="Digite a senha">
+
+    <label class="label">Tipo</label>
+    <input class="input" type="text" asp-for="UsuariosEnum" class="form-control" placeholder="Qual o tipo de usuário">
+
+    <button type="submit">Sing in</button>
+</form>
