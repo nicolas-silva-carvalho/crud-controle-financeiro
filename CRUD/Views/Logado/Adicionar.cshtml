@@ -3,19 +3,35 @@
     Layout = null;
 }
 
+<link href="~/css/logado/indexlogado.css" rel="stylesheet" asp-append-version="true"/>
 
-<form asp-controller="Logado" asp-action="Adicionar" method="post">
-    <label>Produto</label>
-    <input type="text" asp-for="Produto" class="form-control" placeholder="Digite o produto">
+<form asp-controller="Logado" asp-action="Adicionar" method="post" class="container">
+    <label class="label">Produto</label>
+    <input type="text" asp-for="Produto" class="input" placeholder="Digite o produto">
 
-    <label>Quantas parcelas</label>
-    <input type="text" asp-for="QtdParcelas" class="form-control" placeholder="Digite a quantidade de parcelas">
+    <label class="label">Quantas de parcelas</label>
+    <input type="text" asp-for="QtdParcelas" class="input" placeholder="Digite a quantidade de parcelas">
 
-    <label>Preco total</label>
-    <input type="number" asp-for="Precototal" class="form-control" placeholder="Digite o preço total">
+    <label class="label">Preço total</label>
+    <input type="number" asp-for="Precototal" class="input" placeholder="Digite o preço total do produto">
 
-    <label>Descricao</label>
-    <input type="text" asp-for="Descricao" class="form-control" placeholder="Digite o nome do usuário">
+    <label class="label">Descrição</label>
+    <input type="text" asp-for="Descricao" class="input" placeholder="Digite a descrição do produto">
 
-    <button type="submit">Enviar compra</button>
+    <button type="submit" class="button">Enviar compra</button>
+
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-erro" role="alert">
+            <button type="button" class="close-erro" arial-label="Close">X</button>
+            @TempData["Error"]
+        </div>
+    }
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
 </form>
+

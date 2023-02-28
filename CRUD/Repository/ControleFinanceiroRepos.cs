@@ -14,12 +14,20 @@ namespace CRUD.Repository
 
         public ControleFinanceiro Adicionar(ControleFinanceiro controleFinanceiro)
         {
-            _contexto.ControleFinanceiros.Add(controleFinanceiro);
-            controleFinanceiro.PrecoPorParcela = (decimal)(controleFinanceiro.Precototal / controleFinanceiro.QtdParcelas);
-            var date = controleFinanceiro.DataCompra = DateTime.UtcNow;
-            controleFinanceiro.UltimoDiaParcela = date.AddMonths(controleFinanceiro.QtdParcelas);
-            _contexto.SaveChanges();
-            return controleFinanceiro;
+            if(controleFinanceiro.QtdParcelas != 0)
+            {
+                _contexto.ControleFinanceiros.Add(controleFinanceiro);
+                controleFinanceiro.PrecoPorParcela = (decimal)(controleFinanceiro.Precototal / controleFinanceiro.QtdParcelas);
+                var date = controleFinanceiro.DataCompra = DateTime.UtcNow;
+                controleFinanceiro.UltimoDiaParcela = date.AddMonths(controleFinanceiro.QtdParcelas);
+                _contexto.SaveChanges();
+                return controleFinanceiro;
+            }
+            else
+            {
+                return controleFinanceiro;
+            }
+           
 
         }
 

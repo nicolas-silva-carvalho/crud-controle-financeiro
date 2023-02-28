@@ -91,6 +91,7 @@ tfoot th {
   color: #fff;
   padding: 8px;
   background-color: #4b908f;
+  cursor: pointer;
 }
 
 .select {
