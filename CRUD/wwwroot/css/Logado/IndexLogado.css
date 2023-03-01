@@ -118,9 +118,12 @@ body {
     color: white;
 }
 
+.div-input {
+    margin-bottom: 32px;
+}
+
 .input {
     padding: 20px;
-    margin-bottom: 32px;
     border-radius: 12px;
     border: none;
     box-shadow: rgba(0,0,0,0.8) 0 0 10px;
@@ -128,7 +131,7 @@ body {
     margin-right: -29px;
     margin-left: -29px;
     width: 25vw;
-    height: 4.4vw;
+    height: 3.7vw;
 }
 
 .label {
@@ -137,14 +140,15 @@ body {
     color: #64E3FF;
     text-shadow: 2px 2px 4px #000000;
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
     font-family: opensans-regular, sans-serif;
 }
 
-.container {
+.container-formulario {
     display: grid;
     grid-template-columns: min-content;
-    padding: 7vw;
+    padding: 4vw;
+    margin-left: 40px;
     border-radius: 15px;
     background-color: #1D232A;
 }
@@ -163,6 +167,70 @@ body {
     cursor: pointer;
 }
 
+.voltar {
+    background-color: #088cb8;
+    text-align: center;
+    line-height: 1;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.voltar:hover {
+    background-color: #006374;
+}
+
 .button:hover {
     background-color: seagreen;
+}
+
+.titulo {
+    background: linear-gradient(90deg, #FFE27D 0%, #64E3FF 30%, #9192FF 85%);
+    text-align: center;
+    padding: 0.5em;
+    border-radius: 6px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.alert {
+    position: absolute;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.alert-success {
+    color: #0f5132;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+}
+
+.alert-danger {
+  color: #842029;
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+}
+
+.botao {
+    background: none;
+    border: none;
+    font-weight: 600;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #b00800;
+}
+
+.field-validation-error {
+    margin-top: 10px;
+    color: red;
 }

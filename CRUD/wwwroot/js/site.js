@@ -6,3 +6,7 @@
 $('.close-erro').click(function () {
     $('.alert-erro').hide('hide');
 });
+
+setTimeout(function () {
+    $('.alert-erro').fadeOut('fast');
+}, 5000);

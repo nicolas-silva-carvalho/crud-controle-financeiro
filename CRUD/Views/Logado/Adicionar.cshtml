@@ -4,34 +4,60 @@
 }
 
 <link href="~/css/logado/indexlogado.css" rel="stylesheet" asp-append-version="true"/>
-
-<form asp-controller="Logado" asp-action="Adicionar" method="post" class="container">
-    <label class="label">Produto</label>
-    <input type="text" asp-for="Produto" class="input" placeholder="Digite o produto">
-
-    <label class="label">Quantas de parcelas</label>
-    <input type="text" asp-for="QtdParcelas" class="input" placeholder="Digite a quantidade de parcelas">
-
-    <label class="label">Preço total</label>
-    <input type="number" asp-for="Precototal" class="input" placeholder="Digite o preço total do produto">
-
-    <label class="label">Descrição</label>
-    <input type="text" asp-for="Descricao" class="input" placeholder="Digite a descrição do produto">
-
-    <button type="submit" class="button">Enviar compra</button>
-
+<div class="center-alertas">
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert-erro alert alert-success" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Sucesso"]
+        </div>
+    }
 
     @if (TempData["Error"] != null)
     {
-        <div class="alert-erro" role="alert">
-            <button type="button" class="close-erro" arial-label="Close">X</button>
+            <div class="alert-erro alert alert-danger" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
             @TempData["Error"]
         </div>
     }
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-</form>
+    <form asp-controller="Logado" asp-action="Adicionar" method="post" class="container-formulario">
+       
+        <h1 class="titulo">Adicionar compras</h1>
+        
+        <div class="div-input">
+        <label class="label">Produto</label>
+        <input type="text" asp-for="Produto" class="input" placeholder="Digite o produto">
+        @Html.ValidationMessageFor(x => x.Produto)
+        </div>
 
+        <div class="div-input">
+        <label class="label">Quantas de parcelas</label>
+        <input type="text" asp-for="QtdParcelas" class="input" placeholder="Digite a quantidade de parcelas">
+        @Html.ValidationMessageFor(x => x.QtdParcelas)
+        </div>
+
+        <div class="div-input">
+        <label class="label">Preço total</label>
+        <input type="number" asp-for="Precototal" class="input" placeholder="Digite o preço total do produto">
+        @Html.ValidationMessageFor(x => x.Precototal)
+        </div>
+
+        <div class="div-input">
+        <label class="label">Descrição</label>
+        <input type="text" asp-for="Descricao" class="input" placeholder="Digite a descrição do produto">
+        @Html.ValidationMessageFor(x => x.Descricao)
+        </div>
+
+        <button type="submit" class="button">Enviar compra</button>
+        <br />
+        <a asp-action="Index" asp-controller="Logado" role="button" class="voltar">Voltar</a>
+
+   
+
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </form>
+</div>

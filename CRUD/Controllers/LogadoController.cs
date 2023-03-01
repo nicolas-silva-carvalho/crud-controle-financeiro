@@ -38,15 +38,16 @@ namespace CRUD.Controllers
             {
                 Usuarios usuarioLogado = _sessao.RecuperarSessaoId();
                 controleFinanceiro.UsuariosId = usuarioLogado.Id;
-
-                if(controleFinanceiro.QtdParcelas != 0)
-                { 
-                    controleFinanceiro = _controleFinanceiro.Adicionar(controleFinanceiro);
-                    return RedirectToAction("Index");
-                }
-                TempData["Error"] = "Não é possível adicionar zero a quantidade de parcelas.";
-                return View(controleFinanceiro);
                 
+                    if(controleFinanceiro.QtdParcelas != 0)
+                    { 
+                        controleFinanceiro = _controleFinanceiro.Adicionar(controleFinanceiro);
+                        TempData["Sucesso"] = "Produto Adicionado com sucesso";
+                        return RedirectToAction("Adicionar");
+                    
+                    }
+                    //TempData["Error"] = "Não é possível adicionar zero a quantidade de parcelas.";
+                    return View(controleFinanceiro);
             }
             catch (Exception ex)
             {
