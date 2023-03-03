@@ -1,9 +1,8 @@
 ﻿@model ControleFinanceiro
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<link href="~/css/logado/indexlogado.css" rel="stylesheet" asp-append-version="true"/>
 <div class="center-alertas">
     @if (TempData["Sucesso"] != null)
     {
@@ -20,44 +19,29 @@
             @TempData["Error"]
         </div>
     }
-
-    <form asp-controller="Logado" asp-action="Adicionar" method="post" class="container-formulario">
-       
-        <h1 class="titulo">Adicionar compras</h1>
+        <h2 class="titulo">Adicionar compras</h2>
+        <form asp-controller="Logado" asp-action="Adicionar" method="post" class="container-formulario">
         
-        <div class="div-input">
         <label class="label">Produto</label>
         <input type="text" asp-for="Produto" class="input" placeholder="Digite o produto">
         @Html.ValidationMessageFor(x => x.Produto)
-        </div>
 
-        <div class="div-input">
         <label class="label">Quantas de parcelas</label>
         <input type="text" asp-for="QtdParcelas" class="input" placeholder="Digite a quantidade de parcelas">
         @Html.ValidationMessageFor(x => x.QtdParcelas)
-        </div>
 
-        <div class="div-input">
         <label class="label">Preço total</label>
         <input type="number" asp-for="Precototal" class="input" placeholder="Digite o preço total do produto">
         @Html.ValidationMessageFor(x => x.Precototal)
-        </div>
 
-        <div class="div-input">
         <label class="label">Descrição</label>
         <input type="text" asp-for="Descricao" class="input" placeholder="Digite a descrição do produto">
         @Html.ValidationMessageFor(x => x.Descricao)
-        </div>
 
-        <button type="submit" class="button">Enviar compra</button>
+        <button type="submit" class="button-adicionarenviar">Enviar compra</button>
         <br />
-        <a asp-action="Index" asp-controller="Logado" role="button" class="voltar">Voltar</a>
+        <a asp-action="Index" asp-controller="Logado" role="button" class="button-adicionar">Voltar</a>
+        </form>
 
-   
-
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </form>
+    
 </div>

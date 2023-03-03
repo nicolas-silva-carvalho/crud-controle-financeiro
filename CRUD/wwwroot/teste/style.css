@@ -19,11 +19,11 @@ p {
   text-align: center;
   margin: 20px 0 60px;
 }
-
+/*
 main {
   background-color: #2C3845;
 }
-
+*/
 h1 {
     text-align: center;
     font-weight: 300;
@@ -48,8 +48,9 @@ tr {
 }
 
 td {
-  padding: 10px 10px 0;
-  text-align: center;
+    padding: 10px 10px 0;
+    text-align: center;
+    background-color: #1D232A;
 }
 td:before {
   content: attr(data-title);
@@ -82,7 +83,7 @@ tfoot th {
   color: #b8c4d2;
 }
 
-.button {
+.button-table {
   line-height: 1;
   display: inline-block;
   font-size: 1em;
@@ -92,6 +93,10 @@ tfoot th {
   padding: 8px;
   background-color: #4b908f;
   cursor: pointer;
+}
+
+.button-table:hover {
+    color: white!important;
 }
 
 .select {

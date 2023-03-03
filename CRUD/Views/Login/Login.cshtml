@@ -1,18 +1,18 @@
 ﻿@model Login
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
-<link href="~/css/LoginECriarConta/LoginECriarContacss.css" asp-append-version="true" rel="stylesheet"/>
-
-<section>
-    <form class="container" asp-controller="Login" asp-action="Login" method="post">
-        <label class="label">Username</label>
-        <input type="text" asp-for="Username" class="input" placeholder="Digite o nome do usuário">
+<body class="body-index">
+    <section class="posicao-login">
+        <form class="container" asp-controller="Login" asp-action="Login" method="post">
+            <label class="label">Username</label>
+            <input type="text" asp-for="Username" class="input" placeholder="Digite o nome do usuário">
     
-        <label class="label">Senha</label>
-        <input type="password" asp-for="Password" class="input" placeholder="Digite o nome do usuário">
-        <button type="submit">Entrar</button>
-    </form>
-</section>
+            <label class="label">Senha</label>
+            <input type="password" asp-for="Password" class="input" placeholder="Digite o nome do usuário">
+            <button class="button" type="submit">Entrar</button>
+        </form>
+    </section>
+</body>
 

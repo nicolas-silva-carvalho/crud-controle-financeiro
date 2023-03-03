@@ -1,12 +1,8 @@
 ﻿@model List<ControleFinanceiro>
-
 @{
-    Layout = null;
+    Layout = "_Layout";
     ViewData["Title"] = "Home de usuário";
 }
-
-<link href="~/css/Logado/IndexLogado.css" rel="stylesheet" asp-append-version="true" />
-<link href="~/teste/style.css" rel="stylesheet" asp-append-version="true"/>
 
     <header class="cabecalho">
         
@@ -20,56 +16,50 @@
         <a href="#" class="menu-lateral__link menu-lateral__link--camisas">#</a>
         <a class="menu-lateral__link menu-lateral__link--pinturas" asp-action="Sair" asp-controller="Logado">Sair</a>
     </nav>
-<section class="principal">
-        <table>
-            <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Produto</th>
-                <th scope="col">QtdParcelas</th>
-                <th scope="col">Precototal</th>
-                <th scope="col">PrecoPorParcela</th>
-                <th scope="col">Descricao</th>
-                <th scope="col">DataCompra</th>
-                <th scope="col">UltimoDiaParcela</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody>
-            @if (Model != null && Model.Any())
-            {
-                foreach (var controleFinanceiro in Model)
+    <section class="principal">
+            <table>
+                <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">QtdParcelas</th>
+                    <th scope="col">Precototal</th>
+                    <th scope="col">PrecoPorParcela</th>
+                    <th scope="col">Descricao</th>
+                    <th scope="col">DataCompra</th>
+                    <th scope="col">UltimoDiaParcela</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                @if (Model != null && Model.Any())
                 {
-                    <tr class="coluna">
-                        <td data-title='Provider Name' scope="row">@controleFinanceiro.Id</td>
-                        <td data-title='E-mail'>@controleFinanceiro.Produto</td>
-                        <td>@controleFinanceiro.QtdParcelas</td>
-                        <td>@controleFinanceiro.Precototal</td>
-                        <td>@controleFinanceiro.PrecoPorParcela</td>
-                        <td>@controleFinanceiro.Descricao</td>
-                        <td>@controleFinanceiro.DataCompra</td>
-                        <td>@controleFinanceiro.UltimoDiaParcela</td>
-                        <td class='select'>
-                            <div>
-                                <a class="button" role="button" href="#">Opções</a>
-                            </div>
-                        </td>
-                    </tr>
+                    foreach (var controleFinanceiro in Model)
+                    {
+                        <tr class="coluna">
+                            <td data-title='Provider Name' scope="row">@controleFinanceiro.Id</td>
+                            <td data-title='E-mail'>@controleFinanceiro.Produto</td>
+                            <td>@controleFinanceiro.QtdParcelas</td>
+                            <td>@controleFinanceiro.Precototal</td>
+                            <td>@controleFinanceiro.PrecoPorParcela</td>
+                            <td>@controleFinanceiro.Descricao</td>
+                            <td>@controleFinanceiro.DataCompra</td>
+                            <td>@controleFinanceiro.UltimoDiaParcela</td>
+                            <td class='select'>
+                                <div>
+                                    <a class="button-table" role="button" href="#">Opções</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+
                 }
-
-            }
-            else
-            {
-                <tr><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>
-            }
-            </tbody>
-        </table>
-
-    <script src="~/teste/index.js" asp-append-version="true"></script>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.1/datatables.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-</section>
+                else
+                {
+                    <tr><td valign="top" colspan="5">Nenhum contato encontrado</td></tr>
+                }
+                </tbody>
+            </table>
+    </section>
 
     

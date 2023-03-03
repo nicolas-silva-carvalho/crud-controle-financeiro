@@ -2,8 +2,8 @@
 using CRUD.Repository;
 using CRUD.Session;
 using Microsoft.AspNetCore.Mvc;
-using CRUD.Funcoes;
 using CRUD.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRUD.Controllers
 {
@@ -38,16 +38,16 @@ namespace CRUD.Controllers
             {
                 Usuarios usuarioLogado = _sessao.RecuperarSessaoId();
                 controleFinanceiro.UsuariosId = usuarioLogado.Id;
-                
-                    if(controleFinanceiro.QtdParcelas != 0)
-                    { 
-                        controleFinanceiro = _controleFinanceiro.Adicionar(controleFinanceiro);
-                        TempData["Sucesso"] = "Produto Adicionado com sucesso";
-                        return RedirectToAction("Adicionar");
-                    
-                    }
-                    //TempData["Error"] = "Não é possível adicionar zero a quantidade de parcelas.";
-                    return View(controleFinanceiro);
+
+                if (controleFinanceiro.QtdParcelas > 0)
+                {
+                    controleFinanceiro = _controleFinanceiro.Adicionar(controleFinanceiro);
+                    TempData["Sucesso"] = "Produto Adicionado com sucesso";
+                    return RedirectToAction("Adicionar");
+                }
+
+                TempData["Error"] = "Erro ao cadastrar compra.";
+                return View(controleFinanceiro);
             }
             catch (Exception ex)
             {
@@ -61,20 +61,39 @@ namespace CRUD.Controllers
             return RedirectToAction("Login", "Login");
         }
 
-        public IActionResult Grafico()
+        //public IActionResult Grafico()
+        //{
+        //    Usuarios usuario = _sessao.RecuperarSessaoId();
+        //    var resultado = _controleFinanceiro.BuscarTodos(usuario.Id).GroupBy(x => x.Produto).Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
+
+        //    string dados = "";
+
+        //    foreach (var item in resultado)
+        //    {
+        //        dados += "['" + item.Key + "'," + item.TotalComprado.ToString().Replace(",", ".") + "],";
+        //    }
+
+        //            dados = dados.Substring(0, dados.Length - 1);
+        //            ViewBag.GraficoPizza = GoogleChart.GerarGraficoPizza("Total de compra por Produto", dados);
+        //    return View();
+        //}
+        public async Task<ActionResult> Grafico()
         {
             Usuarios usuario = _sessao.RecuperarSessaoId();
-            var resultado = _controleFinanceiro.BuscarTodos(usuario.Id).GroupBy(x => x.Produto).Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
+            DateTime dataInicial = DateTime.Today.AddDays(-30);
+            DateTime datafinal = DateTime.Today;
 
-            string dados = "";
+            List<ControleFinanceiro> lista = await _contexto.ControleFinanceiros
+                .Where(x => x.DataCompra >= dataInicial && x.DataCompra <= datafinal)
+                .ToListAsync();
 
-            foreach (var item in resultado)
-            {
-                dados += "['" + item.Key + "'," + item.TotalComprado.ToString().Replace(",", ".") + "],";
-            }
-          
-                    dados = dados.Substring(0, dados.Length - 1);
-                    ViewBag.GraficoPizza = GoogleChart.GerarGraficoPizza("Total de compra por Produto", dados);
+            //total Receita
+            decimal receita = lista.Where(i => i.Produto == "Produto").Sum(j => j.Precototal);
+            ViewBag.TotalReceita = receita.ToString("CO");
+
+            int TotalMes = lista.Where(i => i.Produto == "Produto").Count();
+            ViewBag.Totalmes = receita.ToString("CO");
+
             return View();
         }
 
@@ -98,19 +117,5 @@ namespace CRUD.Controllers
             data.Add(preco);
             return data;
         }
-        //[HttpPost]
-        //public List<object> GraficoData()
-        //{
-        //    Usuarios usuario = _sessao.RecuperarSessaoId();
-        //    List<object> data = new List<object>();
-
-        //    List<string> label = _controleFinanceiro.BuscarTodos(usuario.Id).Select(p => p.Produto).ToList();
-        //    data.Add(label);
-
-        //    List<DateTime> date1 = _contexto.ControleFinanceiros.Select(x => x.DataCompra).ToList();
-        //    data.Add(date1);
-
-        //    return data;
-        //}
     }
 }

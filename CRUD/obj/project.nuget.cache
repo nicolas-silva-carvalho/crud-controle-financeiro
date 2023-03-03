@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "glnJ9QdkCZezuPWlXdZwBJoYalCFQWdsoIwWHb23MzURrcZxS2uoyZRyUCtuO3MLhoHDlTC6LHvt6BeYFmVhHg==",
+  "dgSpecHash": "o/FRgQWFmS21ZnT/cPh76YRFPAzlb28BntHc4mEm+T6885wLZBw8VYahvuOUN+UHubDymDdJQViwkPD9fCbmeg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\CRUD.csproj",
   "expectedPackageFiles": [
@@ -44,6 +44,8 @@
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\syncfusion.ej2.aspnet.core\\20.4.0.52\\syncfusion.ej2.aspnet.core.20.4.0.52.nupkg.sha512",
+    "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\syncfusion.licensing\\20.4.0.52\\syncfusion.licensing.20.4.0.52.nupkg.sha512",
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
     "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\system.configuration.configurationmanager\\5.0.0\\system.configuration.configurationmanager.5.0.0.nupkg.sha512",

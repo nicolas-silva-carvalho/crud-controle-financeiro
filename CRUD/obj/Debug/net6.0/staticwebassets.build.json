@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "KVWACpNldRCcmY1MHrYPW+e5SrEEPoQUz+qIGOuQce0=",
+  "Hash": "bYW7j6uU/J8Bb6FzNDb01eHhPJes4ZZdVZAJaQRfFoM=",
   "Source": "CRUD",
   "BasePath": "_content/CRUD",
   "Mode": "Default",
@@ -49,23 +49,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\CRUD.bundle.scp.css"
-    },
-    {
-      "Identity": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\wwwroot\\css\\Index\\Button.css",
-      "SourceId": "CRUD",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\wwwroot\\",
-      "BasePath": "_content/CRUD",
-      "RelativePath": "css/Index/Button.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\Index\\Button.css"
     },
     {
       "Identity": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\wwwroot\\css\\Index\\Index.css",

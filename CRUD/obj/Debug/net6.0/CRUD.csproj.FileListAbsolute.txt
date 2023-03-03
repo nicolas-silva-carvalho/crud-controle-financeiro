@@ -262,3 +262,6 @@ C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\obj\Debug\net6.0\refint\CRUD.dll
 C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\obj\Debug\net6.0\CRUD.pdb
 C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\obj\Debug\net6.0\CRUD.genruntimeconfig.cache
 C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\obj\Debug\net6.0\ref\CRUD.dll
+C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\bin\Debug\net6.0\Syncfusion.EJ2.dll
+C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\bin\Debug\net6.0\Syncfusion.Licensing.dll
+C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\obj\Debug\net6.0\CRUD.MvcApplicationPartsAssemblyInfo.cs
