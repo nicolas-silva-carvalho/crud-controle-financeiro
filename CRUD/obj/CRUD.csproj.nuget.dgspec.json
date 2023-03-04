@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\CRUD.csproj": {}
+    "C:\\Users\\Nicol\\source\\crud-controle-financeiro\\CRUD\\CRUD.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\CRUD.csproj": {
+    "C:\\Users\\Nicol\\source\\crud-controle-financeiro\\CRUD\\CRUD.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\CRUD.csproj",
+        "projectUniqueName": "C:\\Users\\Nicol\\source\\crud-controle-financeiro\\CRUD\\CRUD.csproj",
         "projectName": "CRUD",
-        "projectPath": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\CRUD.csproj",
-        "packagesPath": "C:\\Users\\nicolas.carvalho\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nicolas.carvalho\\Desktop\\CRUD\\CRUD\\obj\\",
+        "projectPath": "C:\\Users\\Nicol\\source\\crud-controle-financeiro\\CRUD\\CRUD.csproj",
+        "packagesPath": "C:\\Users\\Nicol\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Nicol\\source\\crud-controle-financeiro\\CRUD\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\nicolas.carvalho\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Nicol\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -92,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

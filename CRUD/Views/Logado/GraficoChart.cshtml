@@ -1,22 +1,27 @@
 ﻿
-
 @*<input id="ID" value="Mostrar Gráfico" type="button" />
 <input id="IDs" value="Mostrar Gráfico" type="button" />*@
-<a asp-action="Index" asp-asp-controller="Logado" role="button">Voltar</a>
 
-<div id="ID">
-    <canvas id="myChart" style="max-width: 400px; max-height: 400px"></canvas>
-</div>
+<body>
+    <section>
+    <h2>Relatórios de compras</h2>
+        <div id="IDs" class="chart-position-2">
+        <canvas id="myCharts" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 400px; margin:auto; width:250px; height:250px; display:inline;"></canvas>
+    </div>
+    <br />
 
-<div id="IDs">
-    <canvas id="myCharts" style="max-width: 400px; max-height: 400px"></canvas>
-</div>
+    <div id="ID" class="chart-position">
+            <canvas id="myChart" style="width: 500px; height: 300px;"></canvas>
+    </div>
+    
+    <br />
+    <div id="IDss" class="chart-position-2">
+        <canvas id="myChartss" style="width: 500px; height: 300px;"></canvas>
+    </div>
+    </section>
 
-<div id="IDss">
-    <canvas id="myChartss" style="max-width: 400px; max-height: 400px"></canvas>
-</div>
-
-
+    <a asp-action="Index" asp-asp-controller="Logado" role="button" class="button-adicionarenviar">Voltar</a>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script type="text/javascript">
@@ -40,7 +45,7 @@
                 var _chartLabels=_data[0];
                 var _chartData=_data[1];
 
-                var barColor = ["red", "green", "yellow", "blue", "black", "black", "black", "black"];
+                var barColor = ["red", "green", "yellow", "blue", "black", "#a12fda", "#1a1d45", "black"];
 
                 new Chart("myChart",
                 {
@@ -48,8 +53,10 @@
                     data: {
                         labels: _chartLabels,
                         datasets: [{
+                            label: 'Custo por produto',
                             backgroundColor: barColor,
                             data: _chartData
+                           
                         }]
                     }
                 });
@@ -84,11 +91,11 @@
                 var _chartLabels = _data[0];
                 var _chartData = _data[1];
 
-                var barColor = ["rgb(255, 99, 132)", "green", "yellow", "blue", "rgb(54, 162, 235)", "black", "black", "black"];
+                var barColor = ["rgb(255, 99, 132)", "green", "yellow", "blue", "rgb(54, 162, 235)", "black", "#a12fda", "#1a1d45"];
 
                 new Chart("myCharts",
                     {
-                        type: "polarArea",
+                        type: "pie",
                         data: {
                             labels: _chartLabels,
                             datasets: [{

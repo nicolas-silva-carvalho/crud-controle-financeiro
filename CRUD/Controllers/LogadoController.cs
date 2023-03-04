@@ -4,6 +4,7 @@ using CRUD.Session;
 using Microsoft.AspNetCore.Mvc;
 using CRUD.Data;
 using Microsoft.EntityFrameworkCore;
+using CRUD.Funcoes;
 
 namespace CRUD.Controllers
 {
@@ -61,39 +62,20 @@ namespace CRUD.Controllers
             return RedirectToAction("Login", "Login");
         }
 
-        //public IActionResult Grafico()
-        //{
-        //    Usuarios usuario = _sessao.RecuperarSessaoId();
-        //    var resultado = _controleFinanceiro.BuscarTodos(usuario.Id).GroupBy(x => x.Produto).Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
-
-        //    string dados = "";
-
-        //    foreach (var item in resultado)
-        //    {
-        //        dados += "['" + item.Key + "'," + item.TotalComprado.ToString().Replace(",", ".") + "],";
-        //    }
-
-        //            dados = dados.Substring(0, dados.Length - 1);
-        //            ViewBag.GraficoPizza = GoogleChart.GerarGraficoPizza("Total de compra por Produto", dados);
-        //    return View();
-        //}
-        public async Task<ActionResult> Grafico()
+        public IActionResult Grafico()
         {
             Usuarios usuario = _sessao.RecuperarSessaoId();
-            DateTime dataInicial = DateTime.Today.AddDays(-30);
-            DateTime datafinal = DateTime.Today;
+            var resultado = _controleFinanceiro.BuscarTodos(usuario.Id).GroupBy(x => x.Produto).Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
 
-            List<ControleFinanceiro> lista = await _contexto.ControleFinanceiros
-                .Where(x => x.DataCompra >= dataInicial && x.DataCompra <= datafinal)
-                .ToListAsync();
+            string dados = "";
 
-            //total Receita
-            decimal receita = lista.Where(i => i.Produto == "Produto").Sum(j => j.Precototal);
-            ViewBag.TotalReceita = receita.ToString("CO");
+            foreach (var item in resultado)
+            {
+                dados += "['" + item.Key + "'," + item.TotalComprado.ToString().Replace(",", ".") + "],";
+            }
 
-            int TotalMes = lista.Where(i => i.Produto == "Produto").Count();
-            ViewBag.Totalmes = receita.ToString("CO");
-
+            dados = dados.Substring(0, dados.Length - 1);
+            ViewBag.GraficoPizza = GoogleChart.GerarGraficoPizza("Total de compra por Produto", dados);
             return View();
         }
 

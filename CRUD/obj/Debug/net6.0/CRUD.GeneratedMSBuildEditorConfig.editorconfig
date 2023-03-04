@@ -9,53 +9,53 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CRUD
 build_property.RootNamespace = CRUD
-build_property.ProjectDir = C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD\
+build_property.ProjectDir = C:\Users\Nicol\source\crud-controle-financeiro\CRUD\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\nicolas.carvalho\Desktop\CRUD\CRUD
+build_property.MSBuildProjectDirectory = C:\Users\Nicol\source\crud-controle-financeiro\CRUD
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Home/Index.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Logado/Adicionar.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Adicionar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEFkaWNpb25hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Logado/Grafico.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Grafico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEdyYWZpY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Logado/GraficoChart.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/GraficoChart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEdyYWZpY29DaGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Logado/Index.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Login/CriarConta.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Login/CriarConta.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ3JpYXJDb250YS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Login/Login.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/_ViewImports.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/_ViewStart.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nicolas.carvalho/Desktop/CRUD/CRUD/Views/Shared/_Layout.cshtml]
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-layzia8bah

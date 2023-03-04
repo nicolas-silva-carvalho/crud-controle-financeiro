@@ -16,7 +16,7 @@
     display: grid;
     grid-template-columns: min-content;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.70);
-    padding: 7vw 6vw 10vw 6vw;
+    padding: 7vw 6vw 7vw 6vw;
     border-radius: 15px;
     background-color: #1D232A;
 }
@@ -24,7 +24,7 @@
 .container-singup {
     display: grid;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.70);
-    padding: 4vw 7vw 4vw 7vw;
+    padding: 5vw;
     border-radius: 15px;
     background-color: #1D232A;
 }
@@ -42,7 +42,7 @@
 
 .input-singup {
     width: 320px;
-    padding: 16px;
+    padding: 12px;
     border-radius: 8px;
     border: none;
     box-shadow: rgba(0,0,0,0.8) 0 0 10px;
@@ -75,7 +75,10 @@
 }
 
 .input::placeholder {
-    font-family: opensans-regular;
+    font-size: 14px;
+}
+
+.input-singup::placeholder {
     font-size: 12px;
 }
 
