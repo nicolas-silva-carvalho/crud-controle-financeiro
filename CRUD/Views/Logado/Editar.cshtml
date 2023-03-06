@@ -1,0 +1,49 @@
+﻿@model ControleFinanceiro
+@{
+    Layout = "_Layout";
+}
+
+<div class="center-alertas">
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert-erro alert alert-success" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Sucesso"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-erro alert alert-danger" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Error"]
+        </div>
+    }
+</div>
+<h2 class="titulo">Editar/Atualizar compras</h2>
+<form asp-controller="Logado" asp-action="Editar" method="post" class="container-formulario">
+    <input type="hidden" asp-for="Id" class="form-control"/>
+    <label class="label">Produto</label>
+    <input type="text" asp-for="Produto" class="input" placeholder="Digite o produto">
+    @Html.ValidationMessageFor(x => x.Produto)
+
+    <label class="label">Quantas de parcelas</label>
+    <input type="text" asp-for="QtdParcelas" class="input" placeholder="Digite a quantidade de parcelas">
+    @Html.ValidationMessageFor(x => x.QtdParcelas)
+
+    <label class="label">Preço total</label>
+    <input type="number" asp-for="Precototal" class="input" placeholder="Digite o preço total do produto">
+    @Html.ValidationMessageFor(x => x.Precototal)
+
+    <label class="label">Descrição</label>
+    <input type="text" asp-for="Descricao" class="input" placeholder="Digite a descrição do produto">
+    @Html.ValidationMessageFor(x => x.Descricao)
+
+    <label class="label">Data da compra</label>
+    <input type="datetime-local" asp-for="DataCompra" class="input" placeholder="Digite a descrição do produto">
+    @Html.ValidationMessageFor(x => x.DataCompra)
+
+    <button type="submit" class="button-adicionarenviar">Atualizar</button>
+    <br />
+    <a asp-action="Index" asp-controller="Logado" role="button" class="button-adicionar">Voltar</a>
+</form>

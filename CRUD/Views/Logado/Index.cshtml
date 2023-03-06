@@ -4,6 +4,24 @@
     ViewData["Title"] = "Home de usuário";
 }
 
+<div class="center-alertas">
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert-erro alert-index alert-success" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Sucesso"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-erro alert-index alert-danger" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Error"]
+        </div>
+    }
+</div>
+
     <header class="cabecalho">
         
     </header>
@@ -45,9 +63,16 @@
                             <td>@controleFinanceiro.Descricao</td>
                             <td>@controleFinanceiro.DataCompra</td>
                             <td>@controleFinanceiro.UltimoDiaParcela</td>
-                            <td class='select'>
-                                <div>
-                                    <a class="button-table" role="button" href="#">Opções</a>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="button-table dropdown-toggle" type="button" id="@controleFinanceiro.Id" data-bs-toggle="dropdown" aria-expanded="false">
+                                       Opções
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="@controleFinanceiro.Id">
+                                        <li><a class="dropdown-item" asp-action="Editar" asp-controller="Logado" asp-route-id="@controleFinanceiro.Id">Editar</a></li>
+                                    <li><a class="dropdown-item" asp-action="ApagarConfirma" asp-controller="Logado" asp-route-id="@controleFinanceiro.Id">Excluir</a></li>
+                                        <li><a class="dropdown-item" href="#">Novas opções</a></li>
+                                    </ul>
                                 </div>
                             </td>
                         </tr>

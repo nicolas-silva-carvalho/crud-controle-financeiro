@@ -65,7 +65,9 @@ namespace CRUD.Controllers
         public IActionResult Grafico()
         {
             Usuarios usuario = _sessao.RecuperarSessaoId();
-            var resultado = _controleFinanceiro.BuscarTodos(usuario.Id).GroupBy(x => x.Produto).Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
+            var resultado = _controleFinanceiro.BuscarTodos(usuario.Id)
+                .GroupBy(x => x.Produto)
+                .Select(g => new { g.Key, TotalComprado = g.Sum(x => x.Precototal) });
 
             string dados = "";
 
@@ -81,6 +83,13 @@ namespace CRUD.Controllers
 
         public IActionResult GraficoChart()
         {
+            Usuarios usuario = _sessao.RecuperarSessaoId();
+            var total = _controleFinanceiro.BuscarTodos(usuario.Id).Sum(x => x.Precototal);
+            var totalProdutos = _controleFinanceiro.BuscarTodos(usuario.Id).Sum(x => x.QuantidadeDeProdutos);
+            var preçoMaisCaro = _controleFinanceiro.BuscarTodos(usuario.Id).Max(x => x.Precototal);
+            ViewBag.total = total;
+            ViewBag.totalProdutos = totalProdutos;
+            ViewBag.preçoMaisCaro = preçoMaisCaro;
             return View();
         }
 
@@ -98,6 +107,49 @@ namespace CRUD.Controllers
 
             data.Add(preco);
             return data;
+        }
+
+        public IActionResult Editar(int id)
+        {
+            ControleFinanceiro controleFinanceiro = _controleFinanceiro.BuscarPorId(id);
+            return View(controleFinanceiro);
+        }
+
+        [HttpPost]
+        public IActionResult Editar(ControleFinanceiro controleFinanceiro)
+        {
+            try
+            {
+                if (controleFinanceiro.QtdParcelas > 0)
+                {
+                    var ctolefinanc = _controleFinanceiro.Atualizar(controleFinanceiro);
+                    TempData["Sucesso"] = "Produto Alterado com sucesso";
+                    return RedirectToAction(nameof(Index));
+                }
+                TempData["Error"] = "Erro ao alterar sua compra.";
+                return View(controleFinanceiro);
+               
+                   
+            }
+            catch(Exception ex)
+            {
+                return RedirectToAction("Index");
+            }
+        }
+
+        public IActionResult Apagar(int id)
+        {
+            ControleFinanceiro controleFinanceiro = _controleFinanceiro.BuscarPorId(id);
+            return View(controleFinanceiro);
+        }
+
+        public IActionResult ApagarConfirma(int id)
+        {
+            bool controlefinanceiro = _controleFinanceiro.Apagar(id);
+            if(controlefinanceiro) TempData["Sucesso"] = "Produto excluido com sucesso";
+            else TempData["Error"] = "Erro ao apagar sua compra.";
+            return RedirectToAction("Index");
+
         }
     }
 }

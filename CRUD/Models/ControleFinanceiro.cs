@@ -20,6 +20,7 @@ namespace CRUD.Models
         public string Descricao { get; set; }
         public DateTime DataCompra { get; set; }
         public DateTime UltimoDiaParcela { get; set; }
+        public int QuantidadeDeProdutos { get; set;} 
         public int UsuariosId { get; set; }
         public virtual Usuarios Usuarios { get; set; }
     }
