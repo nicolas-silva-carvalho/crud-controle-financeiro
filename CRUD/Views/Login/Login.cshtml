@@ -8,9 +8,13 @@
         <form class="container" asp-controller="Login" asp-action="Login" method="post">
             <label class="label">Username</label>
             <input type="text" asp-for="Username" class="input" placeholder="Digite o nome do usuário">
+            @Html.ValidationMessageFor(x => x.Username)
     
             <label class="label">Senha</label>
             <input type="password" asp-for="Password" class="input" placeholder="Digite o nome do usuário">
+            @Html.ValidationMessageFor(x => x.Password)
+
+            <a href="">Recuperar senha</a>
             <button class="button margin" type="submit">Entrar</button>
         </form>
     </section>
