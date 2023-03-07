@@ -3,6 +3,24 @@
     Layout = "_Layout";
 }
 
+<div class="center-alertas">
+    @if (TempData["Sucesso"] != null)
+    {
+        <div class="alert-erro alert alert-success" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Sucesso"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert-erro alert alert-danger" role="alert">
+            <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Error"]
+        </div>
+    }
+</div>
+
 <body class="body-index">
     <section class="posicao-login">
         <form class="container" asp-controller="Login" asp-action="Login" method="post">
@@ -13,9 +31,8 @@
             <label class="label">Senha</label>
             <input type="password" asp-for="Password" class="input" placeholder="Digite o nome do usuário">
             @Html.ValidationMessageFor(x => x.Password)
-
-            <a href="">Recuperar senha</a>
             <button class="button margin" type="submit">Entrar</button>
+            <a asp-action="RecuperarSenha" asp-controller="Login" class="mb-4 text-sm-center mx-auto fw-bold text-secondary">Redefinir senha</a>
         </form>
     </section>
 </body>

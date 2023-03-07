@@ -27,11 +27,23 @@ namespace CRUD.Repository
             throw new NotImplementedException();
         }
 
-        public Usuarios BuscarPorLoginESenha(string login, string senha)
+        public Usuarios Atualizar(Usuarios usuarios)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuarios BuscarPorLogin(string login)
         {
             return contexto
                 .Usuarios
                 .FirstOrDefault(x => x.Username.ToUpper() == login.ToUpper());
+        }
+
+        public Usuarios BuscarPorLoginEEmail(string login, string email)
+        {
+            return contexto
+                .Usuarios
+                .FirstOrDefault(x => x.Username.ToUpper() == login.ToUpper() && x.Email.ToUpper() == email.ToUpper());
         }
 
         public List<Usuarios> BuscarTodos()

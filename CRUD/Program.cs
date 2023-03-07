@@ -1,4 +1,5 @@
 using CRUD.Data;
+using CRUD.Helper;
 using CRUD.Repository;
 using CRUD.Session;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ namespace CRUD
             builder.Services.AddScoped<IUsuarios, UsuarioRepos>();
             builder.Services.AddScoped<IControleFinanceiro, ControleFinanceiroRepos>();
             builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            builder.Services.AddScoped<IEmail, Email>();
             builder.Services.AddSession(options =>
             {
                 options.Cookie.HttpOnly = true;
