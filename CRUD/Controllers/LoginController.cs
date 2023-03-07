@@ -34,13 +34,17 @@ namespace CRUD.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    Usuarios usuario = _usuarios.BuscarPorLoginESenha(login.Username, login.Password);
+                    Usuarios usuario = _usuarios.BuscarPorLoginESenha(login.Username);
 
                     if(usuario != null)
                     {
-                        _sessao.CriarSessao(usuario);
-                        return RedirectToAction("Index", "Logado");
+                        if (usuario.SenhaValida(login.Password))
+                        {
+                            _sessao.CriarSessao(usuario);
+                            return RedirectToAction("Index", "Logado");
+                        }
                     }
+                    TempData["Error"] = "Usuário ou senha inválidas.";
                 }
                 return View(login);
             }
@@ -60,14 +64,33 @@ namespace CRUD.Controllers
         {
             try
             {
-                usuario = _usuarios.Adicionar(usuario);
-                return RedirectToAction("CriarConta");
+                if(!ModelState.IsValid)
+                { 
+                    usuario = _usuarios.Adicionar(usuario);
+                    TempData["Sucesso"] = "Usuário cadastrado com sucesso";
+                    return RedirectToAction("CriarConta");
+                }
+                return View();
+                
             }
             catch (Exception ex)
             {
-                return RedirectToAction("CriarConta");
+                TempData["Error"] = "Erro ao cadastrar usuário.";
+                return View("CriarConta");
                 throw new Exception($"Erro ao cadastrar usuário. Erro:{ex.Message}");
+                
             }
+        }
+
+        public IActionResult RecuperarSenha(RecuperarSenhaModel model)
+        {
+            ViewBag.EmailEnviado = true;
+            if (HttpContext.Request.Method.ToUpper() == "GET")
+            {
+                ViewBag.EmailEnviado = false;
+                ModelState.Clear();
+            }
+            return View(model);
         }
     }
 }

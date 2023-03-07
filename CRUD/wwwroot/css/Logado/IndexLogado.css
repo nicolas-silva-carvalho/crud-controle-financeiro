@@ -208,6 +208,21 @@ body {
     cursor: pointer;
 }
 
+.button-adicionar-usuario {
+    line-height: 1;
+    margin-top: 5px;
+    display: inline-block;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 16px;
+    width: 243px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: #4b908f;
+    cursor: pointer;
+}
 .button-adicionar:hover {
         color: white !important;
 }

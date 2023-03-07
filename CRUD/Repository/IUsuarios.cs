@@ -4,7 +4,7 @@ namespace CRUD.Repository
 {
     public interface IUsuarios
     {
-        Usuarios BuscarPorLoginESenha(string login, string senha);
+        Usuarios BuscarPorLoginESenha(string login);
         Usuarios BuscarUsuariosPorId(int id);
         List<Usuarios> BuscarTodos();
         Usuarios Adicionar(Usuarios usuario);

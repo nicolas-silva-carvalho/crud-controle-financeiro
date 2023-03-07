@@ -14,6 +14,7 @@ namespace CRUD.Repository
 
         public Usuarios Adicionar(Usuarios usuario)
         {
+            usuario.SetaSenhaHash();
             contexto.Usuarios.Add(usuario);
             usuario.DataCadastro = DateTime.UtcNow;
             contexto.SaveChanges();
@@ -30,7 +31,7 @@ namespace CRUD.Repository
         {
             return contexto
                 .Usuarios
-                .FirstOrDefault(x => x.Username.ToUpper() == login.ToUpper() && x.Password.ToUpper() == senha.ToUpper());
+                .FirstOrDefault(x => x.Username.ToUpper() == login.ToUpper());
         }
 
         public List<Usuarios> BuscarTodos()
