@@ -11,6 +11,7 @@ namespace CRUD.Repository
         Usuarios Adicionar(Usuarios usuario);
         Usuarios Atualizar(Usuarios usuarios);
         bool Apagar(int id);
+        public Usuarios AlterarSenha(AlterarSenha alterarSenha);
 
     }
 }

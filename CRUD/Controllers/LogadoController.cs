@@ -13,11 +13,13 @@ namespace CRUD.Controllers
         private readonly IControleFinanceiro _controleFinanceiro;
         private readonly ISessao _sessao;
         private readonly Contexto _contexto;
-        public LogadoController(IControleFinanceiro controleFinanceiro, ISessao sessao, Contexto contexto)
+        private readonly IUsuarios _usuarios;
+        public LogadoController(IControleFinanceiro controleFinanceiro, ISessao sessao, Contexto contexto, IUsuarios usuarios)
         {
             _controleFinanceiro = controleFinanceiro;
             _sessao = sessao;
             _contexto = contexto;
+            _usuarios = usuarios;
         }
 
         public IActionResult Index()
@@ -154,6 +156,29 @@ namespace CRUD.Controllers
 
         public IActionResult AlterarSenha()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult AlterarSenha(AlterarSenha alterarSenha)
+        {
+            try
+            { 
+                Usuarios usuario = _sessao.RecuperarSessaoId();
+                alterarSenha.Id = usuario.Id;
+
+                if(ModelState.IsValid)
+                {
+                    _usuarios.AlterarSenha(alterarSenha);
+                    TempData["Sucesso"] = "Senha alterado com sucesso";
+                    return View("Index", alterarSenha);
+                }
+            }
+            catch(Exception ex)
+            {
+                TempData["Error"] = "Erro ao troca de senha.";
+                throw new Exception($"Error : {ex.Message}");
+            }
             return View();
         }
     }

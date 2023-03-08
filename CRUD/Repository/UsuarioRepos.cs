@@ -22,6 +22,20 @@ namespace CRUD.Repository
 
         }
 
+        public Usuarios AlterarSenha(AlterarSenha alterarSenha)
+        {
+            Usuarios usuarioDB = BuscarUsuariosPorId(alterarSenha.Id);
+
+            if (usuarioDB == null) throw new Exception("Houve um erro ao localizar um usuário.");
+            if (!usuarioDB.SenhaValida(alterarSenha.SenhaAtual)) throw new Exception("Senha atual não confere.");
+            if (usuarioDB.SenhaValida(alterarSenha.NovaSenha)) throw new Exception("Nova senha deve ser diferente da senha atual.");
+
+            usuarioDB.SetNovaSenha(alterarSenha.NovaSenha);
+            contexto.Usuarios.Update(usuarioDB);
+            contexto.SaveChanges();
+            return usuarioDB;
+        }
+
         public bool Apagar(int id)
         {
             throw new NotImplementedException();

@@ -24,11 +24,14 @@ namespace CRUD.Models
             return Password == senha.GerarHash();
         }
 
-
-
         public void SetaSenhaHash()
         {
             Password = Password.GerarHash();
+        }
+
+        public void SetNovaSenha(string novaSenha)
+        {
+            Password = novaSenha.GerarHash();
         }
 
         public string GerarNovaSenha()
