@@ -3,23 +3,46 @@
     Layout = "_Layout";
 }
 
+<div class="center-alertas">
+    @if (TempData["Sucesso"] != null)
+    {
+            <div class="alert-erro alert alert-success" role="alert">
+                <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Sucesso"]
+            </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+                <div class="alert-erro alert alert-danger" role="alert">
+                <button type="button" class="close-erro botao" arial-label="Close">X</button>
+            @TempData["Error"]
+            </div>
+    }
+</div>
+
 <body class="body-index">
     <form class="container-singup posicao-login" asp-controller="Login" asp-action="CriarConta" method="post">
         <label class="label-singup">Nome</label>
-        <input class="input-singup" type="text" asp-for="Nome" class="form-control" placeholder="Digite o seu nome">
+        <input class="input-singup" type="text" asp-for="Nome" placeholder="Digite o seu nome">
+        @Html.ValidationMessageFor(x => x.Nome)
     
         <label class="label-singup">E-mail</label>
-        <input class="input-singup" type="text" asp-for="Email" class="form-control" placeholder="Digite o E-mail">
+        <input class="input-singup" type="text" asp-for="Email" placeholder="Digite o E-mail">
+        @Html.ValidationMessageFor(x => x.Email)
 
         <label class="label-singup">Username</label>
-        <input class="input-singup" type="text" asp-for="Username" class="form-control" placeholder="Digite o nome do usuário">
+        <input class="input-singup" type="text" asp-for="Username" placeholder="Digite o nome do usuário">
+        @Html.ValidationMessageFor(x => x.Username)
 
         <label class="label-singup">Password</label>
-        <input class="input-singup" type="text" asp-for="Password" class="form-control" placeholder="Digite a senha">
+        <input class="input-singup" type="password" asp-for="Password" placeholder="Digite a senha">
+        @Html.ValidationMessageFor(x => x.Password)
 
         <label class="label-singup">Tipo</label>
-        <input class="input-singup" type="text" asp-for="UsuariosEnum" class="form-control" placeholder="Qual o tipo de usuário">
+        <input class="input-singup" type="text" asp-for="UsuariosEnum" placeholder="Qual o tipo de usuário">
 
         <button class="button margin" type="submit">Sing in</button>
+        <a asp-action="Index" asp-controller="Home" role="button" class="button-adicionar-usuario">Voltar</a>
     </form>
 </body>

@@ -24,6 +24,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEFkaWNpb25hci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Apagar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEFwYWdhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Editar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEVkaXRhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Logado/Grafico.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nYWRvXEdyYWZpY28uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Login/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Login/RecuperarSenha.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVjdXBlcmFyU2VuaGEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Nicol/source/crud-controle-financeiro/CRUD/Views/Shared/_ValidationScriptsPartial.cshtml]

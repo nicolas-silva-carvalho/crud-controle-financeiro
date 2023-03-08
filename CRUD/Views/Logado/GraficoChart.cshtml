@@ -3,24 +3,40 @@
 <input id="IDs" value="Mostrar Gráfico" type="button" />*@
 
 <body>
-    <section>
+    <div class="menu-relatorio">
     <h2>Relatórios de compras</h2>
-        <div id="IDs" class="chart-position-2">
-        <canvas id="myCharts" style="min-width: 200px; min-height: 200px; max-width: 400px; max-height: 400px; margin:auto; width:250px; height:250px; display:inline;"></canvas>
+        <a asp-action="Index" asp-asp-controller="Logado" role="button" class="button-relatorio">Voltar</a>
+    </div>
+
+    <div>
+        @Html.Raw(ViewBag.preçoMaisCaro)
+    </div>
+
+    <div>
+        @Html.Raw(ViewBag.total)
+    </div>
+
+    <div>
+        @Html.Raw(ViewBag.totalProdutos)
+    </div>
+
+    <section>
+        <div id="IDs" class="chart-position-3">
+            <canvas id="myCharts" style="width: 300px; height: 300px;"></canvas>
     </div>
     <br />
 
     <div id="ID" class="chart-position">
-            <canvas id="myChart" style="width: 500px; height: 300px;"></canvas>
+            <canvas id="myChart" style="width: 400px; height: 300px;"></canvas>
     </div>
     
     <br />
     <div id="IDss" class="chart-position-2">
-        <canvas id="myChartss" style="width: 500px; height: 300px;"></canvas>
+        <canvas id="myChartss" style="width: 400px; height: 300px;"></canvas>
     </div>
     </section>
 
-    <a asp-action="Index" asp-asp-controller="Logado" role="button" class="button-adicionarenviar">Voltar</a>
+    
 </body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 

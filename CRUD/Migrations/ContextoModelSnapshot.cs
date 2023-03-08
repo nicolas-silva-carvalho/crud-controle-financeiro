@@ -50,6 +50,9 @@ namespace CRUD.Migrations
                     b.Property<int>("QtdParcelas")
                         .HasColumnType("int");
 
+                    b.Property<int>("QuantidadeDeProdutos")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UltimoDiaParcela")
                         .HasColumnType("datetime2");
 
