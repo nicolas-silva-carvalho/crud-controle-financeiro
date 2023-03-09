@@ -171,7 +171,7 @@ namespace CRUD.Controllers
                 {
                     _usuarios.AlterarSenha(alterarSenha);
                     TempData["Sucesso"] = "Senha alterado com sucesso";
-                    return View("Index", alterarSenha);
+                    return RedirectToAction("Index");
                 }
             }
             catch(Exception ex)
